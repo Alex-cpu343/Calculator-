@@ -29,6 +29,7 @@ function App() {
       <header className="p-4 flex justify-between items-center shadow-lg w-[80%] mx-auto h-15 rounded-xl heade">
           <nav className="flex space-x-6">
             <NavLink
+            data-test = "calculator"
               to="/"
               className={({ isActive }) =>
                 isActive ? ' font-bold bt1 shadow-lg  flex items-center justify-center  w-20 h-10 rounded-lg' : ' flex items-center justify-center hover:underline  bt1 '

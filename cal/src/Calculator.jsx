@@ -94,8 +94,10 @@ return(
 <main className=" ">
     <h1 className="font-bold text-5xl text-center  hCal">Calculator</h1>
     <section className="relative top-25 left-10"> 
-<input value={inp} onChange={e => SetInp(e.target.value)} type="text" placeholder="Please enter your math problem" className="border-2 rounded-lg text-xl " />
-  <button onClick={resultat}
+<input data-test='glowInp' value={inp} onChange={e => SetInp(e.target.value)} type="text" placeholder="Please enter your math problem" className="border-2 rounded-lg text-xl " />
+  <button 
+  data-test="btnCal"
+  onClick={resultat}
             className={`w-28 h-10 font-bold rounded-lg cursor-pointer ml-2 transition duration-300  ${
               theme === 'light'
                 ? ' bg-stone-950 text-white hover:bg-stone-700'
@@ -104,7 +106,9 @@ return(
           >
             Calculate
           </button>
-         <button onClick={backspace} className={`w-10 h-10 font-bold rounded-lg cursor-pointer ml-2 transition duration-300 relative left-2  ${
+         <button 
+         data-test="btnDel"
+         onClick={backspace} className={`w-10 h-10 font-bold rounded-lg cursor-pointer ml-2 transition duration-300 relative left-2  ${
               theme === 'light'
                 ? ' bg-stone-950 text-white hover:bg-stone-700'
                 : ' bg-white text-black h'
@@ -114,21 +118,35 @@ return(
 </main>
 <main>
     <h2 className="font-bold text-xl hY">Your math problem:{visualFormat(inp)}</h2>
-    <h2 className="font-bold text-2xl hY">Result:{res}</h2>
+    <h2
+    data-test="Res"
+    className="font-bold text-2xl hY">Result:{res}</h2>
 </main>
 
 <main className="sm:absolute sm:left-150 sm:top-40 shadow-lg rounded-lg w-80 h-80 relative left-20 top-20 md:left-120 lg:left-150 ">
     <h1 className="font-bold text-2xl text-center hk ">Keyboard</h1>
     <div className="flex shadow-lg rounded-xl w-50 h-10 kb">
-        <button className={`${Act ==='one'?"bts bg-cyan-500 rounded-xl font-semibold   ":"bts  "}`} onClick={()=>SetAct('one')} >Standard</button>
-        <button className={`${Act ==='two'?" bg-cyan-500 rounded-xl font-semibold":""}`} onClick={()=>SetAct('two')}>Scientific</button>
+        <button 
+        data-test="str"
+        className={`${Act ==='one'?"bts bg-cyan-500 rounded-xl font-semibold   ":"bts  "}`} onClick={()=>SetAct('one')} >Standard</button>
+        <button
+        data-test="sci"
+        className={`${Act ==='two'?" bg-cyan-500 rounded-xl font-semibold":""}`} onClick={()=>SetAct('two')}>Scientific</button>
     </div>
     <section>
 
-        <div className={`${Act === 'one'?'block':'hidden'}`}>
-           <span className={`${Page === 'first'?'hidden':"absolute top-45 left-2 cursor-pointer"}`} onClick={()=>SetPage('first')}>&#8592;</span>
-           <span className={`${Page ==='second'?'hidden':"absolute top-45 left-74 cursor-pointer"}`} onClick={()=>SetPage('second')}> &#8594;</span>
-           <div className={`${Page ==='first'?" grid grid-cols-4 gap-4 shadow-lg rounded-lg w-60 h-47 relative left-10 text-center top-5":'hidden'}`}>
+        <div  
+        data-test='StrKey'
+        className={`${Act === 'one'?'block':'hidden'}`}>
+           <span 
+          data-test='secondPage'
+           className={`${Page === 'first'?'hidden':"absolute top-45 left-2 cursor-pointer"}`} onClick={()=>SetPage('first')}>&#8592;</span>
+           <span
+              data-test='firstPage'
+               className={`${Page ==='second'?'hidden':"absolute top-45 left-74 cursor-pointer"}`} onClick={()=>SetPage('second')}> &#8594;</span>
+           <div 
+           data-test="pageOne"
+           className={`${Page ==='first'?" grid grid-cols-4 gap-4 shadow-lg rounded-lg w-60 h-47 relative left-10 text-center top-5":'hidden'}`}>
             <div  onClick={()=>key('1')} className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out cursor-pointer" >1</div>
              <div onClick={()=>key('2')}className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out">2</div>
              <div onClick={()=>key('3')}className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out">3</div>
@@ -153,7 +171,9 @@ return(
 
                
               
-           <div className={`${Page === 'second'?"grid grid-cols-3 gap-4 shadow-lg rounded-lg w-60 h-47 relative left-10 text-center top-5":'hidden'}`}>
+           <div 
+             data-test="pageTwo"
+           className={`${Page === 'second'?"grid grid-cols-3 gap-4 shadow-lg rounded-lg w-60 h-47 relative left-10 text-center top-5":'hidden'}`}>
                 <div onClick={()=>key('(')}className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out">(</div>
                 <div onClick={()=>key(')')}className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out">)</div>
               
@@ -171,7 +191,9 @@ return(
     </section>
     <section>
         
-        <div className={`${Act === 'two'?'block':'hidden'}`}>
+        <div
+        data-test="SciKey"
+        className={`${Act === 'two'?'block':'hidden'}`}>
            <div className="grid grid-cols-4 gap-4 relative shadow-lg rounded-lg w-60 h-47 left-10 text-center top-5"> 
             <div onClick={()=>key('sin()')}className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out">sin</div>
             <div onClick={()=>key('cos()')}className="hover:shadow-lg hover:rounded-lg hover:font-black hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out transition duration-300 ease-in-out">cos</div>
