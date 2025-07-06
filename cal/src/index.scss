@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+transition: all 0.3s ease-in-out;
+
+    &.light {
+  background-color: white;
+  color:#2c2c2c;
+}
+
+&.dark {
+  background-color: #2c2c2c;
+  color: white;
+}
+}
+
+
+button{
+cursor: pointer;
+
+&.theme-toggle {
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+}
+.heade{
+    margin-left: clamp(1rem,4rem,15rem);
+   
+}
+.bt1{
+    margin-left: 5rem;
+    transition: all 0.3s ease-in-out;
+
+}
+.bt2{
+    margin-left: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+.bt3{
+    margin-left: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+.hCal{
+    margin-top: clamp(1rem,1.5rem,2rem);
+    
+}
+input{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+input:focus {
+  border-color: #3b83f6c6; 
+  box-shadow: 0 0 5px #3b82f6;
+}
+.hY{
+    margin-left: 3.5rem;
+}
+.hk{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.kb{
+    margin-left: 3.5rem;
+}
+.bts{
+    margin-right: 2rem;
+    margin-left: 1rem;
+}

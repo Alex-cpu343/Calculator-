@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+body.light {
+  background-color: white;
+  color: #2c2c2c;
+}
+body.dark {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+button.theme-toggle {
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.heade {
+  margin-left: 4rem;
+}
+
+.bt1 {
+  margin-left: 5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bt2 {
+  margin-left: 2rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bt3 {
+  margin-left: 2rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hCal {
+  margin-top: 1.5rem;
+}
+
+input {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+input:focus {
+  border-color: rgba(59, 131, 246, 0.7764705882);
+  -webkit-box-shadow: 0 0 5px #3b82f6;
+          box-shadow: 0 0 5px #3b82f6;
+}
+
+.hY {
+  margin-left: 3.5rem;
+}
+
+.hk {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.kb {
+  margin-left: 3.5rem;
+}
+
+.bts {
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
